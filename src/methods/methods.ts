@@ -4,4 +4,4 @@ let onSubmit = (e: SyntheticEvent) => {
 	e.preventDefault();
 };
 
-export {onSubmit}
+export { onSubmit };

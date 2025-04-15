@@ -7,19 +7,19 @@ function Index() {
 
 	return (
 		<div
-			className="min-h-dvh flex"
+			className="min-h-dvh flex duration-150"
 			data-theme="black"
 		>
-			<div className="flex-1 flex relative px-4">
-				<div className="grid grid-cols-2">
-					<div className="h-full w-full grid place-items-center p-12">
+			<div className="flex-1 flex relative px-4 justify-center">
+				<div className=" flex flex-col  gap-4  justify-center md:grid  md:grid-cols-2">
+					<div className="md:h-full w-full grid place-items-center md:p-12 ">
 						<img
 							src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/X_logo.jpg/960px-X_logo.jpg"
 							alt=""
-							className="size-full object-contain"
+							className="size-20 md:size-full object-contain"
 						/>
 					</div>
-					<div className="grid place-items-center">
+					<div className="grid place-items-center ">
 						<div className="flex flex-col gap-12">
 							<h2 className="text-3xl font-bold">
 								Happening Now
@@ -71,7 +71,7 @@ function Index() {
 				<AnimatePresence>
 					{modal && (
 						<motion.main
-							className="absolute inset-0 flex bg-blue-500/10 backdrop-blur-md z-20"
+							className="absolute inset-0 flex bg-blue-500/10 backdrop-blur-md z-20 px-4"
 							initial={{ opacity: 0, scale: 0.95 }}
 							animate={{ opacity: 1, scale: 1 }}
 							exit={{ opacity: 0, scale: 0.95 }}
@@ -86,7 +86,7 @@ function Index() {
 									e.stopPropagation();
 								}}
 								onSubmit={onSubmit}
-								className="w-full m-auto max-w-xl flex gap-8 flex-col bg-base-100 px-24 py-12 rounded-xl relative"
+								className="w-full m-auto max-w-xl flex gap-8 flex-col bg-base-100  px-4 md:px-24 py-12 rounded-xl relative"
 							>
 								<button
 									type="button"
