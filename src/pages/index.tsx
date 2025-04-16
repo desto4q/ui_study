@@ -1,8 +1,13 @@
+import { useLayoutEffect } from "react";
+import { useNavigate } from "react-router";
 
 function index() {
-  return (
-    <div>index</div>
-  )
+	let nav = useNavigate();
+
+	useLayoutEffect(() => {
+		nav("/home");
+	}, []);
+	return <div>index</div>;
 }
 
-export default index
+export default index;
