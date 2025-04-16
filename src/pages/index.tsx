@@ -1,13 +1,25 @@
-import { useLayoutEffect } from "react";
+import { useAtomValue } from "jotai";
+import { useEffect } from "react";
 import { useNavigate } from "react-router";
+import { theme_atom } from "~/client/client_state";
 
-function index() {
+function Index() {
+	let theme = useAtomValue(theme_atom);
+
 	let nav = useNavigate();
 
-	useLayoutEffect(() => {
-		nav("/home");
-	}, []);
-	return <div>index</div>;
+	useEffect(() => {
+		nav("/home", { replace: true }); // replace: true = no back button history
+	}, [nav]);
+
+	return (
+		<div
+			className="min-h-dvh flex items-center  justify-center"
+			data-theme={theme}
+		>
+			<h2 className="text-5xl">loading</h2>
+		</div>
+	);
 }
 
-export default index;
+export default Index;
